@@ -27,10 +27,8 @@ app.post("/api/chat", async (req, res) => {
     res.json(data);
 
   } catch (err) {
-    console.log(err);
-    res.status(500).json({ error: "Proxy server error" });
+    res.status(500).json({ error: "Proxy server error", details: err });
   }
 });
 
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => console.log("Proxy running on port " + PORT));
+app.listen(10000, () => console.log("Proxy running on 10000"));
